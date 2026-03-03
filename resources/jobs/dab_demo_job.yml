@@ -1,0 +1,12 @@
+resources:
+  jobs:
+    dab_demo_job:
+      name: dab_demo_job
+      tasks:
+        - task_key: dab_demo_notebook
+          notebook_task:
+            notebook_path: ../notebooks/demo_repo_notbook.py
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
