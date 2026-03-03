@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    pipeline_dlt_orders_pipline:
+      name: dlt_orders_pipline
+      libraries:
+        - notebook:
+            path: /Workspace/Repos/tamraj.dhvaj@zohomail.in/adb_cicd/resources/notebooks/dlt_dab_demo_orders.sql
+      schema: ${resources.schemas.bronze_schema.name}
+      continuous: false
+      development: true
+      photon: true
+      channel: PREVIEW
+      catalog: ${resources.schemas.bronze_schema.catalog_name}
+      serverless: true
